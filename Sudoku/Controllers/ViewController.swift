@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var gridItems = [GridCell]()
+    var inputIndexs = [Int]()
     var puzzle : String?
     
     @IBOutlet var sudokuGrid: UICollectionView!
@@ -28,12 +29,14 @@ class ViewController: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         sudokuGrid!.collectionViewLayout = layout
-        sudokuGrid.layer.borderWidth = 2
+        sudokuGrid.layer.borderWidth = 3
         sudokuGrid.layer.borderColor = UIColor.black.cgColor
         self.automaticallyAdjustsScrollViewInsets = false
         
         //Get pullze from examples
         renderPuzzle()
+        //reload collection
+        self.sudokuGrid.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,12 +47,22 @@ class ViewController: UIViewController {
     //Get random puzzle from examples array and render it
     private func renderPuzzle()  {
         
+        //Remove all previous indexes
+        inputIndexs.removeAll()
+        
         puzzle = Utilities.sharedInstance.getPuzzle()
         if puzzle != nil {
             
             gridItems = grid.gridValue(gridString:puzzle!)
-            self.sudokuGrid.reloadData()
-            //print(display(values: gridItems))
+            
+            //Remember the position of input values on grid
+            for i in 0..<gridItems.count{
+                
+                let item = gridItems[i] as GridCell
+                if Int(item.value)! > 0  {
+                    inputIndexs.append(i)
+                }
+            }
             
         }else{
             
@@ -76,12 +89,15 @@ class ViewController: UIViewController {
         gridItems = grid.values!
 
         //Reload collection
-        self.sudokuGrid.reloadData()
+        self.sudokuGrid.reloadItems(at: self.sudokuGrid.indexPathsForVisibleItems)
+        //self.sudokuGrid.reloadData()
     }
     
     @IBAction func btnResetClicked(_ sender: AnyObject) {
         //Reset and render new puzzle
         renderPuzzle()
+        //Realod collection
+        self.sudokuGrid.reloadItems(at: self.sudokuGrid.indexPathsForVisibleItems)
     }
 }
 
@@ -96,6 +112,15 @@ extension ViewController: UICollectionViewDataSource {
         
         // get a reference to storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"gridCell", for: indexPath as IndexPath) as! SudokuCell
+        
+        if inputIndexs.contains(indexPath.row){
+            
+            cell.layer.backgroundColor = UIColor(red: 204.0/255, green: 204.0/255, blue: 204.0/255, alpha: 1.0).cgColor
+            
+        }else{
+            
+            cell.layer.backgroundColor = UIColor(red: 255.0/255, green: 204.0/255, blue: 0.0/255, alpha: 1.0).cgColor
+        }
         
         // Insert cell data
         cell.initWithItemFor(indexPath: indexPath, item: gridItems[indexPath.item])

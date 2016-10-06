@@ -62,13 +62,15 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD3-YZ-i5P">
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="nA4-dv-Uy9"/>
                                     <constraint firstAttribute="height" constant="40" id="wHa-rD-gra"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Solve"/>
+                                <state key="normal" title="Solve">
+                                    <color key="titleColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="btnSolveClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lYi-ex-Xa5"/>
                                 </connections>
@@ -85,6 +87,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sudoku" id="Ibs-i5-aYQ">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="BSR-dh-uir">
+                            <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="btnResetClicked:" destination="BYZ-38-t0r" id="gAR-m5-HaX"/>
                             </connections>
