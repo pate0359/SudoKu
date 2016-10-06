@@ -18,6 +18,9 @@
 		10A4A0811DA5D86400EC5BC8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4A07A1DA5D86400EC5BC8 /* Extensions.swift */; };
 		10A4A0821DA5D86400EC5BC8 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4A07B1DA5D86400EC5BC8 /* Utilities.swift */; };
 		10A4A0831DA5D86400EC5BC8 /* examples.txt in Resources */ = {isa = PBXBuildFile; fileRef = 10A4A07D1DA5D86400EC5BC8 /* examples.txt */; };
+		10A4A08B1DA685F200EC5BC8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 10A4A08A1DA685F200EC5BC8 /* README.md */; };
+		10A4A08F1DA6911B00EC5BC8 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A4A08D1DA6911B00EC5BC8 /* 1.png */; };
+		10A4A0901DA6911B00EC5BC8 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A4A08E1DA6911B00EC5BC8 /* 2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		10A4A07A1DA5D86400EC5BC8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		10A4A07B1DA5D86400EC5BC8 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		10A4A07D1DA5D86400EC5BC8 /* examples.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = examples.txt; sourceTree = "<group>"; };
+		10A4A08A1DA685F200EC5BC8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		10A4A08D1DA6911B00EC5BC8 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		10A4A08E1DA6911B00EC5BC8 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,8 @@
 		10A4A03A1DA448C800EC5BC8 = {
 			isa = PBXGroup;
 			children = (
+				10A4A08A1DA685F200EC5BC8 /* README.md */,
+				10A4A08C1DA6911B00EC5BC8 /* Screens */,
 				10A4A0451DA448C800EC5BC8 /* Sudoku */,
 				10A4A07C1DA5D86400EC5BC8 /* resources */,
 				10A4A05A1DA448C800EC5BC8 /* SudokuTests */,
@@ -152,6 +160,15 @@
 			path = Sudoku/resources;
 			sourceTree = "<group>";
 		};
+		10A4A08C1DA6911B00EC5BC8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				10A4A08D1DA6911B00EC5BC8 /* 1.png */,
+				10A4A08E1DA6911B00EC5BC8 /* 2.png */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,6 +219,7 @@
 				TargetAttributes = {
 					10A4A0421DA448C800EC5BC8 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = QX7Z43W8U8;
 						ProvisioningStyle = Automatic;
 					};
 					10A4A0561DA448C800EC5BC8 = {
@@ -235,10 +253,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A4A0901DA6911B00EC5BC8 /* 2.png in Resources */,
 				10A4A0511DA448C800EC5BC8 /* LaunchScreen.storyboard in Resources */,
 				10A4A0831DA5D86400EC5BC8 /* examples.txt in Resources */,
 				10A4A04E1DA448C800EC5BC8 /* Assets.xcassets in Resources */,
 				10A4A04C1DA448C800EC5BC8 /* Main.storyboard in Resources */,
+				10A4A08F1DA6911B00EC5BC8 /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +279,7 @@
 				10A4A0821DA5D86400EC5BC8 /* Utilities.swift in Sources */,
 				10A4A0811DA5D86400EC5BC8 /* Extensions.swift in Sources */,
 				10A4A07E1DA5D86400EC5BC8 /* Sudoku.swift in Sources */,
+				10A4A08B1DA685F200EC5BC8 /* README.md in Sources */,
 				10A4A07F1DA5D86400EC5BC8 /* SudokuCell.swift in Sources */,
 				10A4A0801DA5D86400EC5BC8 /* ViewController.swift in Sources */,
 				10A4A0471DA448C800EC5BC8 /* AppDelegate.swift in Sources */,
@@ -324,6 +345,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -374,6 +396,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -400,7 +423,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = QX7Z43W8U8;
 				INFOPLIST_FILE = Sudoku/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.patel.nignesh2108-gmail.com.Sudoku";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,7 +438,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = QX7Z43W8U8;
 				INFOPLIST_FILE = Sudoku/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.patel.nignesh2108-gmail.com.Sudoku";
 				PRODUCT_NAME = "$(TARGET_NAME)";
