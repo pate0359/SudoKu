@@ -21,7 +21,8 @@ Puzzle             |  Solution
 ## Deployment
 * Checkout, Clone or download this repository. 
 * You dont need any chnage to run this application if you are using Xcode8, or you require to update Xcode latest version as Xcode 8 support Swift 3.0
-* You can copy algorithm file "Sudoku.swift" in your project and create your own sudoku game. 
+* You can copy algorithm file "Sudoku.swift" in your project and create your own sudoku game.
+* Easy to add new puzzle : Add puzzle string in examples.text and applictaion will render it.
 
 ## Usage Example
 
