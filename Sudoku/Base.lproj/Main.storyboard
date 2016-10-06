@@ -21,9 +21,6 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a8z-wI-yGO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="493" id="gA1-0q-gdE"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vyr-QU-Z8C">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -79,6 +76,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="a8z-wI-yGO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6NK-0L-ID8"/>
+                            <constraint firstItem="pD3-YZ-i5P" firstAttribute="top" secondItem="a8z-wI-yGO" secondAttribute="bottom" constant="25" id="cF9-JZ-wZO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pD3-YZ-i5P" secondAttribute="bottom" constant="25" id="f2k-mv-u7I"/>
                             <constraint firstItem="pD3-YZ-i5P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i1O-Vd-1Vu"/>
                             <constraint firstItem="a8z-wI-yGO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="rRc-Xa-f3U"/>
@@ -87,7 +85,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sudoku" id="Ibs-i5-aYQ">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="BSR-dh-uir">
-                            <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="btnResetClicked:" destination="BYZ-38-t0r" id="gAR-m5-HaX"/>
                             </connections>
@@ -96,7 +94,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="sudokuGrid" destination="a8z-wI-yGO" id="YWv-xm-hJE"/>
-                        <outlet property="verticalLayoutConstraint" destination="gA1-0q-gdE" id="3rO-to-dpb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

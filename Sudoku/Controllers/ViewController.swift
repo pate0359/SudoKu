@@ -15,13 +15,16 @@ class ViewController: UIViewController {
     var puzzle : String?
     
     @IBOutlet var sudokuGrid: UICollectionView!
-    @IBOutlet var verticalLayoutConstraint: NSLayoutConstraint!
     
     let grid = Grid()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Chnage navigation bar color attribute
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255, green: 51.0/255, blue: 102.0/255, alpha: 1.0)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
         //Set up for collection display view style
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -51,7 +54,7 @@ class ViewController: UIViewController {
         inputIndexs.removeAll()
         
         puzzle = Utilities.sharedInstance.getPuzzle()
-        if puzzle != nil {
+        if puzzle != nil && puzzle != "" {
             
             gridItems = grid.gridValue(gridString:puzzle!)
             
@@ -90,7 +93,6 @@ class ViewController: UIViewController {
 
         //Reload collection
         self.sudokuGrid.reloadItems(at: self.sudokuGrid.indexPathsForVisibleItems)
-        //self.sudokuGrid.reloadData()
     }
     
     @IBAction func btnResetClicked(_ sender: AnyObject) {
