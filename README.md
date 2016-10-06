@@ -2,7 +2,11 @@
 One of the most popular puzzle games of all time.
 
 ## Introduction
-Sudoku is demo application to solve sudoku puzzle programatically by using Peter Norvig algorithm. Algorithm created in Swift3.0 is very easy to use. Application will render random puzzle on screen from available examples (.txt file contains list of puzzles, we can add more puzzles easily), the solution (calculated by algorithm) will render on screen when user hit "solve".
+Sudoku is demo application to solve sudoku puzzle programmatically by using Peter Norvig algorithm. Algorithm created in Swift3.0 is very easy to use. Application will render random puzzle on screen from available examples (.txt file contains list of puzzles, we can add more puzzles easily), the solution (calculated by algorithm) will render on screen when user hit "solve".
+
+![puzzle] (https://github.com/pate0359/Sudoku/blob/master/Screens/1.png)
+![solution] (https://github.com/pate0359/Sudoku/blob/master/Screens/2.png)
+
 
 ## Development
 * Targeted iOS version : iOS9.0+
