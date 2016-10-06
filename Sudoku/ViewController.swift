@@ -11,10 +11,10 @@ import UIKit
 class ViewController: UIViewController {
 
     var gridItems = [GridCell]()
+    var puzzle : String?
     
     @IBOutlet var sudokuGrid: UICollectionView!
     @IBOutlet var verticalLayoutConstraint: NSLayoutConstraint!
-    
     
     let grid = Grid()
     
@@ -32,33 +32,56 @@ class ViewController: UIViewController {
         sudokuGrid.layer.borderColor = UIColor.black.cgColor
         self.automaticallyAdjustsScrollViewInsets = false
         
-        gridItems = grid.gridValue(gridString:"7.....4...2..7..8...3..8.799..5..3...6..2..9...1.97..6...3..9...3..4..6...9..1.35")
-        self.sudokuGrid.reloadData()
-        //print(display(values: inputGrid))
-        
+        //Get pullze from examples
+        renderPuzzle()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    //Get random puzzle from examples array and render it
+    private func renderPuzzle()  {
+        
+        puzzle = Utilities.sharedInstance.getPuzzle()
+        if puzzle != nil {
+            
+            gridItems = grid.gridValue(gridString:puzzle!)
+            self.sudokuGrid.reloadData()
+            //print(display(values: gridItems))
+            
+        }else{
+            
+            // Show error message
+            let alertController = UIAlertController(title: "Sudoku", message:"Unable to parse example.txt", preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            }
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true) {
+            }
+        }
+    }
     
     // MARK: - Action Methods
     @IBAction func btnSolveClicked(_ sender: AnyObject) {
+        //Return if no puzzle string
+        if puzzle == nil { return }
         
-        grid.parseGrid(gridString:"7.....4...2..7..8...3..8.799..5..3...6..2..9...1.97..6...3..9...3..4..6...9..1.35")
+        //Parse puzzle string
+        grid.parseGrid(gridString:puzzle!)
         grid.solvePuzzle()
+        
+        //Get solved puzzle value
         gridItems = grid.values!
+
+        //Reload collection
         self.sudokuGrid.reloadData()
-        
-        //print(display(values: grid.values!))
-        
     }
+    
     @IBAction func btnResetClicked(_ sender: AnyObject) {
-        
-        gridItems = grid.gridValue(gridString:"7.....4...2..7..8...3..8.799..5..3...6..2..9...1.97..6...3..9...3..4..6...9..1.35")
-        self.sudokuGrid.reloadData()
+        //Reset and render new puzzle
+        renderPuzzle()
     }
 }
 
@@ -94,7 +117,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController{
     
     // Print grid.
-    func display(values : [GridCell]) ->String {
+    private func display(values : [GridCell]) ->String {
         
         if values.count <= 0 {
             return "value count ZERO"
