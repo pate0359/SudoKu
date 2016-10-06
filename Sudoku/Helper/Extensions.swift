@@ -32,7 +32,7 @@ extension CALayer {
             border.frame = CGRect(x: 0, y: 0, width: thickness, height:self.frame.height )
             break
         case UIRectEdge.right:
-            border.frame = CGRect(x: 0, y: 0, width: self.frame.width - thickness, height: self.frame.height)
+            border.frame = CGRect(x: self.frame.width - thickness, y: 0, width: thickness, height: self.frame.height)
             break
         default:
             break

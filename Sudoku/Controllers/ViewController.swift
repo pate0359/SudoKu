@@ -66,7 +66,6 @@ class ViewController: UIViewController {
                     inputIndexs.append(i)
                 }
             }
-            
         }else{
             
             // Show error message
@@ -106,6 +105,11 @@ class ViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension ViewController: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int
+    {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.gridItems.count
     }
@@ -124,8 +128,10 @@ extension ViewController: UICollectionViewDataSource {
             cell.layer.backgroundColor = UIColor(red: 255.0/255, green: 204.0/255, blue: 0.0/255, alpha: 1.0).cgColor
         }
         
+        cell.tag = indexPath.item
+        
         // Insert cell data
-        cell.initWithItemFor(indexPath: indexPath, item: gridItems[indexPath.item])
+        cell.initWithItem(item: gridItems[indexPath.item])
         return cell
     }
 }
@@ -144,7 +150,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController{
     
     // Print grid.
-    private func display(values : [GridCell]) ->String {
+    func display(values : [GridCell]) ->String {
         
         if values.count <= 0 {
             return "value count ZERO"

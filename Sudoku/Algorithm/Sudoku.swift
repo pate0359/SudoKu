@@ -34,11 +34,12 @@ struct GridCell {
 /* Sudoku grid */
 class Grid {
     
-    private let rows : Int = 9
-    private let columns : Int = 9
-    private var board: [[Int]] = [[9]]
-    private var gridUnits = [[[Int]]]()
-    private var gridPeers = [[Int]]()
+    static let MATRIX = 9
+    
+    private let rows : Int = MATRIX
+    private let columns : Int = MATRIX
+    var gridUnits = [[[Int]]]()
+    var gridPeers = [[Int]]()
     public var values : [GridCell]!
     
     init() {
@@ -49,7 +50,7 @@ class Grid {
     // ===================================== CALCULATE PEERS AND UNITS ===================================== //
     // MARK:- calculate peers and unit methods
     
-    private func calculatePeersAndUnits() {
+    func calculatePeersAndUnits() {
         
         //peers and units for each position between 0..81
         for i in 0...(rows * columns)-1 {
@@ -178,7 +179,7 @@ class Grid {
     func parseGrid(gridString: String){
         
         //For start let say every cell in grid has value "123456789"
-        values = [GridCell] (repeating: GridCell("123456789"), count: 9 * 9)
+        values = [GridCell] (repeating: GridCell("123456789"), count: Grid.MATRIX * Grid.MATRIX)
         
         let intValues = gridValue(gridString: gridString)
         
